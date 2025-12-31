@@ -1,0 +1,46 @@
+{
+	"name": "lrf-fullstack",
+	"private": true,
+	"scripts": {
+		"dev": "turbo run dev",
+		"build": "turbo run build",
+		"clean": "rm -rf node_modules apps/*/node_modules apps/*/.next apps/*/dist",
+		"lint": "turbo run lint",
+		"client:dev": "turbo run dev --filter=client",
+		"client:build": "turbo run build --filter=client",
+		"client:start": "turbo run start --filter=client",
+		"client:lint": "turbo run lint --filter=client",
+		"client:tailwind:build": "turbo run tailwind:build --filter=client",
+		"server:dev": "turbo run dev --filter=server",
+		"server:build": "turbo run build --filter=server",
+		"server:prod": "turbo run prod --filter=server",
+		"server:format": "turbo run format --filter=server",
+		"server:debug": "turbo run debug --filter=server",
+		"server:lint": "turbo run lint --filter=server",
+		"server:test": "turbo run test --filter=server",
+		"server:test:watch": "turbo run test:watch --filter=server",
+		"server:test:cov": "turbo run test:cov --filter=server",
+		"server:test:debug": "turbo run test:debug --filter=server",
+		"server:test:e2e": "turbo run test:e2e --filter=server",
+		"server:migrate": "pnpm --filter server exec prisma migrate dev --name init",
+		"server:generate:seed": "pnpm --filter server exec prisma db seed",
+		"server:generate": "pnpm --filter server exec prisma generate"
+	},
+	"dependencies": {
+		"axios": "^1.13.2"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "^3.3.3",
+		"@eslint/js": "^9.18.0",
+		"@types/node": "^25.0.3",
+		"dotenv": "^17.2.3",
+		"eslint": "^9.39.2",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-prettier": "^5.5.4",
+		"prettier": "^3.7.4",
+		"turbo": "^2.7.2",
+		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.51.0"
+	},
+	"packageManager": "pnpm@9.15.0"
+}

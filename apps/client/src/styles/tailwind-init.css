@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Primary */
+  --color-brand-red: #b12029;
+
+  /* Brand Secondary */
+  --color-brand-green: #2a7050;
+
+  /* Màu bổ trợ */
+  --color-bg-navy: #112d4e;
+  --color-bg-ice-blue: #f0f4f8;
+  --color-bg-light: #f9fafb; /* Nền sáng */
+  --color-text-dark: #1f2937; /* Chữ đậm */
+  --color-gray-100: #f3f4f6;
+  --color-green-50: #e8f5e9;
+
+  --color-primary: var(--color-brand-red);
+  --color-primary-foreground: #ffffff;
+  --color-primaryHover: #8e1921;
+
+  --color-secondary: var(--color-brand-green);
+  --color-secondary-foreground: #ffffff;
+  --color-secondaryHover: #1e5239;
+
+  --color-accent: var(--color-brand-red);
+
+  --color-lrf-green: var(--color-brand-green);
+  --color-lrf-red: var(--color-brand-red);
+  --color-lrf-navy: var(--color-bg-navy);
+  --color-lrf-ice-blue: var(--color-bg-ice-blue);
+  --color-lrf-light: var(--color-bg-light);
+  --color-lrf-dark: var(--color-text-dark);
+
+  --color-light: var(--color-bg-light);
+  --color-dark: var(--color-text-dark);
+
+  --color-bgLight: #f3f4f6;
+
+  --font-gotham: var(--font-gotham), Arial;
+
+  --radius-btn: 0.75rem; /* 12px */
+  --radius-card: 1rem; /* 16px */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-gotham), Arial;
+    @apply text-dark bg-light;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-gotham), Arial;
+    @apply font-bold text-primary;
+  }
+  button,
+  a {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-2.5 
+           bg-primary text-white font-semibold text-sm 
+           rounded-btn shadow-sm 
+           transition-all duration-300 ease-in-out
+           hover:bg-primaryHover hover:shadow-md active:scale-95;
+  }
+
+  .btn-donate {
+    @apply inline-flex items-center justify-center px-8 py-3 
+           bg-accent text-white font-bold text-base uppercase tracking-wide
+           rounded-full shadow-lg shadow-red-200
+           transition-all duration-300 ease-in-out
+           hover:bg-primaryHover hover:-translate-y-1 hover:shadow-xl active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-2.5 
+           border-2 border-primary text-primary font-semibold text-sm 
+           rounded-btn bg-transparent
+           transition-colors duration-300
+           hover:bg-primary hover:text-white;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-2.5 
+           bg-secondary text-white font-semibold text-sm 
+           rounded-btn shadow-sm 
+           transition-all duration-300 ease-in-out
+           hover:bg-secondaryHover hover:shadow-md active:scale-95;
+  }
+}
+@layer utilities {
+  .ascrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

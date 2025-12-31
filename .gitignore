@@ -1,0 +1,21 @@
+# --- .gitignore (Root) ---
+
+# 1. Dependencies (Quan trọng nhất)
+node_modules/
+
+# 2. Build Tools & Cache
+.turbo/
+pnpm-debug.log*
+npm-debug.log*
+yarn-error.log*
+
+# 3. Environment Variables
+.env
+.env.local
+.env.*.local
+
+# 4. IDE & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
