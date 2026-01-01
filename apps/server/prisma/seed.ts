@@ -1,7 +1,19 @@
+import 'dotenv/config'
+
+import {Pool} from "pg";
 import { PrismaClient, AdminRole, ProjectStatus, PostType } from '@/generated/prisma';
 import * as bcrypt from 'bcrypt';
+import { PrismaPg } from '@prisma/adapter-pg';
 
-const prisma = new PrismaClient();
+const connectionString = process.env.DATABASE_URL;
+if (!connectionString) {
+  throw new Error('❌ DATABASE_URL chưa được load! Kiểm tra file .env');
+}
+const pool = new Pool({connectionString});
+const adapter = new PrismaPg(pool);
+const prisma = new PrismaClient({
+  adapter: adapter
+});
 
 async function main() {
   console.log('🌱 Start seeding database...');
