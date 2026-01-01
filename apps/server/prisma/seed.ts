@@ -1,4 +1,4 @@
-import { PrismaClient, AdminRole, ProjectStatus, PostType } from '@prisma/client';
+import { PrismaClient, AdminRole, ProjectStatus, PostType } from '@/generated/prisma';
 import * as bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();

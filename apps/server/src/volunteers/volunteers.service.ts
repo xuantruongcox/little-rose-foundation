@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateVolunteerDto } from './dto/create-volunteer.dto';
 import { UpdateVolunteerDto } from './dto/update-volunteer.dto';
-import { VolunteerStatus } from '@prisma/client';
+import { VolunteerStatus } from '@/generated/prisma';
 
 @Injectable()
 export class VolunteersService {
