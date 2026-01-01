@@ -1,7 +1,7 @@
 import 'dotenv/config'
 
 import {Pool} from "pg";
-import { PrismaClient, AdminRole, ProjectStatus, PostType } from '@/generated/prisma';
+import { PrismaClient, AdminRole, ProjectStatus, PostType } from '@/generated-backup/prisma';
 import * as bcrypt from 'bcrypt';
 import { PrismaPg } from '@prisma/adapter-pg';
 
